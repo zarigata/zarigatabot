@@ -27,3 +27,13 @@ client.on('message', message => {
 		message.channel.send(`!play ${fraseMusica}`);
 	}})
 	;
+	client.on('message', message => { 
+		if (message.content.toLowerCase().startsWith("tocar")) {
+			// Extrai a parte da mensagem após "tocar"
+			const fraseTocar = message.content.slice(5).trim();
+			
+			// Responde com a frase da música
+			message.channel.send(`!play ${fraseTocar}`); 
+	}}) 
+	; 
+	
